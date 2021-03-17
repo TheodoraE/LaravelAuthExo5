@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $users = User::all();
+    $profiles = Profile::all();
+    return view('welcome', compact('users', 'profiles'));
 });
 
 Auth::routes();
