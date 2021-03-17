@@ -30,14 +30,12 @@
             <h1 class="my-4">Les images de l'utilisateur</h1>
 
            <div class="row">
-                @auth
-                    @foreach ($photos as $photo)
-                        <div class="m-2">
-                            <img src="{{asset('storage/img/'.$photo->url)}}" alt="" height="200px"> <br>
-                            <a href="/photos/{{$photo->id}}" class="btn btn-primary m-2">SHOW</a>
-                        </div>
-                    @endforeach
-                @endauth
+                @foreach ($photos as $photo)
+                    <div class="m-2">
+                        <img src="{{asset('storage/img/'.$photo->url)}}" alt="" height="200px"> <br>
+                        <a href="/photos/{{$photo->id}}" class="btn btn-primary m-2">SHOW</a>
+                    </div>
+                @endforeach
            </div>
         </div>
     </div>

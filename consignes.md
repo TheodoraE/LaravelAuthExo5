@@ -15,3 +15,9 @@ Si on supprime l'user cela supprime la photo et le profil raccroché a l'user.
     (En fait dans home, il faut avoir accès à deux pages, uneimages et une users
     Dans image tu ne dois pouvoir voir que tes images de toi connecté mais users tu peux voir tout le monde)
 
+Conditions:
+1)
+foreach +
+if (img->user_id == Auth::id())
+2)
+$user = User::where('user_id', Auth::id())
