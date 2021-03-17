@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\UserController;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -25,3 +28,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('users', UserController::class);
+Route::resource('photos', PhotoController::class);

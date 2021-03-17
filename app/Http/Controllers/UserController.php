@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Photo;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
-class PhotoController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        // return view('home');
+        $users = User::all();
+        return view('pages.users', compact('users'));
     }
 
     /**
@@ -26,7 +25,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        return view('pages.createImg');
+        //
     }
 
     /**
@@ -37,33 +36,27 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        $store = new Photo();
-        Storage::put('public/img', $request->url);
-        $store->url = $request->file('url')->hashName();
-        $store->user_id = Auth::id();
-        $store->save();
-        return redirect('/home');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Photo  $photo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $show = Photo::find($id);
-        return view('pages.showImg', compact('show'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Photo  $photo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Photo $photo)
+    public function edit($id)
     {
         //
     }
@@ -72,10 +65,10 @@ class PhotoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Photo  $photo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Photo $photo)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -83,10 +76,10 @@ class PhotoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Photo  $photo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Photo $photo)
+    public function destroy($id)
     {
         //
     }

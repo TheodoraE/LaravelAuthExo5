@@ -12,3 +12,6 @@ Créez une page Users et affichez la liste des users par leur nom et leur préno
 Quand on show on voit toutes les informations de l'user ainsi que sa photo
 
 Si on supprime l'user cela supprime la photo et le profil raccroché a l'user.
+    (En fait dans home, il faut avoir accès à deux pages, uneimages et une users
+    Dans image tu ne dois pouvoir voir que tes images de toi connecté mais users tu peux voir tout le monde)
+

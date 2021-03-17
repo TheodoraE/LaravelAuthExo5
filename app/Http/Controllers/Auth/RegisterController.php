@@ -83,11 +83,11 @@ class RegisterController extends Controller
             'user_id' => $user->id,
         ]);
 
-        Photo::create([
-            Storage::put('public/img', $data['url']),
-            'url' => $data['url']->hashName(),
-            'user_id' => $user->id,
-        ]);
+        // Photo::create([
+        //     Storage::put('public/img', $data['url']),
+        //     'url' => $data['url']->hashName(),
+        //     'user_id' => $user->id,
+        // ]);
 
         return $user;
     }
