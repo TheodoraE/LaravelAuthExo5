@@ -45,4 +45,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class, 'user_id');
     }
+    public function photos()
+    {
+        return $this->hasOne(Photo::class, 'user_id');
+    }
 }
